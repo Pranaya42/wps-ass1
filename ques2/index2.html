@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.flex-container {
+  display: flex;
+  flex-direction:column;
+  background-color: chocolate;
+}
+
+.flex-container > div {
+  background-color: black;
+  color:white;
+  margin: 10px;
+  padding: 10px;
+  font-size: 30px;
+}
+</style>
+<script>
+onload =function(){
+    var dayimages=["img-1.jpg","img-2.jpg","img-3.jpg","img-4.jpg","img-5.jpg","img-6.jpg","img-7.jpg"];
+    var date= new Date();
+    var day=date.getDay();
+    document.getElementById("n1").src=dayimages[day-1];
+    var num=Math.random();
+    if(num<0.5){
+    document.getElementById("n2").innerHTML="if random number generated less than 0.5 i get displayed";
+    }
+    else{
+        document.getElementById("n2").innerHTML="if random number generated greater than 0.5 i get displayed";
+    }
+    
+}
+</script>
+</head>
+<body>
+
+<h1>Create a Flex Container</h1>
+
+<div class="flex-container">
+  <div> <img src="rest.jpg" id="n1" width="20%" height="20%"> </div>
+  <br/>
+  <div id="n2"> <p >A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em>.</p>
+
+<p>Direct child elements(s) of the flexible container automatically becomes flexible items.</p>
+</div>
+</div>
+
+</body>
+</html>
